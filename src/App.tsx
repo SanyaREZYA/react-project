@@ -1,11 +1,16 @@
-import Minesweeper from "@app/components/Minesweeper/Minesweeper";
+import { useGame } from './context/GameContext';
+import Minesweeper from './components/Minesweeper/Minesweeper';
+import Modal from './components/Modal/Modal';
 
 function App() {
-  return (
-    <div>
-      <Minesweeper />
-    </div>
-  );
+    const { showModal, getModalProps } = useGame();
+    
+    return (
+        <div className="App">
+            <Minesweeper />
+            {showModal && <Modal {...getModalProps()} />}
+        </div>
+    );
 }
 
 export default App;
