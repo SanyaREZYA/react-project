@@ -17,12 +17,14 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: "WDXL Lubrifont TC", sans-serif;
+    font-size: 3em;
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(9, 40px);
-    grid-template-rows: repeat(9, 40px);
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
     gap: 2px;
 }
 

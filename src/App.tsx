@@ -1,16 +1,13 @@
-import {useGame} from './context/GameContext';
-
-import Minesweeper from './components/Minesweeper/Minesweeper';
-import Modal from './components/Modal/Modal';
+import {Route, Routes} from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import GamePage from './pages/GamePage';
 
 function App() {
-    const {showModal, getModalProps} = useGame();
-
     return (
-        <div className="App">
-            <Minesweeper/>
-            {showModal && <Modal {...getModalProps()} />}
-        </div>
+        <Routes>
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/game" element={<GamePage/>}/>
+        </Routes>
     );
 }
 

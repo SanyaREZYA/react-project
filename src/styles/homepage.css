@@ -1,0 +1,18 @@
+.wellcome-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: "WDXL Lubrifont TC", sans-serif;
+    font-size: 3em;
+}
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #2b8d1c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "WDXL Lubrifont TC", sans-serif;
+
+}
