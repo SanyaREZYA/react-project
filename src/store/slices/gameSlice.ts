@@ -61,6 +61,7 @@ interface GameState {
     win: boolean;
     showModal: boolean;
     modalMessage: string;
+    username: string;
 }
 
 const initialState: GameState = {
@@ -69,6 +70,7 @@ const initialState: GameState = {
     win: false,
     showModal: false,
     modalMessage: '',
+    username: '',
 };
 
 export const gameSlice = createSlice({
@@ -76,6 +78,7 @@ export const gameSlice = createSlice({
     initialState,
     reducers: {
         restartGame: (state) => {
+            console.log('Restart action dispatched');
             state.board = generateBoard();
             state.gameOver = false;
             state.win = false;
@@ -117,6 +120,9 @@ export const gameSlice = createSlice({
         closeModal: (state) => {
             state.showModal = false;
         },
+        setUsername: (state, action: PayloadAction<string>) => {
+            state.username = action.payload;
+        },
     },
 });
 
@@ -125,6 +131,7 @@ export const {
     clickCell,
     rightClickCell,
     closeModal,
+    setUsername,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;
