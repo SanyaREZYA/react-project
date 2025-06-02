@@ -1,0 +1,32 @@
+.gamepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+}
+
+.game-nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.back-button {
+    background-color: #ffffff;
+    color: grey;
+    border: 3px solid grey;
+    border-radius: 5px;
+    font-family: "WDXL Lubrifont TC", sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: grey;
+    color: #ffffff;
+    cursor: pointer;
+}
