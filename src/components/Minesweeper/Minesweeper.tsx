@@ -1,13 +1,12 @@
-import {useGame} from '../../context/GameContext';
-import Cell from "../Cell/Cell.tsx";
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from '../../store';
+import {clickCell, rightClickCell} from '../../store/slices/gameSlice';
+import Cell from '../Cell/Cell';
 import './Minesweeper.css';
 
 function Minesweeper() {
-    const {
-        board,
-        handleClick,
-        handleRightClick,
-    } = useGame();
+    const dispatch = useDispatch();
+    const board = useSelector((state: RootState) => state.game.board);
 
     return (
         <div>
@@ -19,14 +18,16 @@ function Minesweeper() {
                             <Cell
                                 key={cIndex}
                                 cell={cell}
-                                onClick={() => handleClick(rIndex, cIndex)}
-                                onRightClick={(event) => handleRightClick(event, rIndex, cIndex)}
+                                onClick={() => dispatch(clickCell({row: rIndex, col: cIndex}))}
+                                onRightClick={(e) => {
+                                    e.preventDefault();
+                                    dispatch(rightClickCell({row: rIndex, col: cIndex}));
+                                }}
                             />
                         ))}
                     </div>
                 ))}
             </div>
-
         </div>
     );
 }

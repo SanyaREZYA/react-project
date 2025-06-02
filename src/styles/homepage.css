@@ -1,8 +1,10 @@
+
 .wellcome-container {
     text-align: center;
     margin-top: 50px;
     font-family: "WDXL Lubrifont TC", sans-serif;
     font-size: 3em;
+    color: #d3d3d3;
 }
 
 .start-button {
