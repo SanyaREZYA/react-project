@@ -28,5 +28,6 @@
 .back-button:hover {
     background-color: grey;
     color: #ffffff;
+    border: 3px solid grey;
     cursor: pointer;
 }

@@ -16,7 +16,7 @@ export default function GamePage() {
             </nav>
             <div className="game-container">
                 <Minesweeper/>
-                {showModal && <Modal {...getModalProps()} />}
+                <Modal/>
             </div>
         </main>
     );
